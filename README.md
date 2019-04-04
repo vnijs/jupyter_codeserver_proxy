@@ -1,11 +1,10 @@
-=========
-Cloud9 IDE
+Code Server
 =========
 
 http://coder.com is a port of microsoft VScode to the browser
 
-This package is a plugin for `jupyter-server-proxy <https://jupyter-server-proxy.readthedocs.io/>`_
-that lets you run an instance of cloud9 alongside your notebook, primarily
+This package is a plugin for `jupyter-server-proxy` <https://jupyter-server-proxy.readthedocs.io/>
+that lets you run an instance of code-server alongside your notebook, for example, 
 in a JupyterHub / Binder environment.
 
 Installing code-server
