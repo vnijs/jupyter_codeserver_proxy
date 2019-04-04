@@ -16,8 +16,14 @@ def setup_codeserver():
         working_dir = os.getenv("CODE_WORKINGDIR", None)
         if working_dir is None:
             working_dir = os.getenv("JUPYTER_SERVER_ROOT", ".")
+        data_dir = os.getenv("CODE_USER_DATA_DIR", "")
+        if data_dir is not "":
+            data_dir = "--user-data-dir=" + str(data_dir)
+        extensions_dir = os.getenv("CODE_EXTENSIONS_DIR", "")
+        if extensions_dir is not "":
+            extensions_dir = "--extensions-dir=" + str(extensions_dir)
 
-        return [full_path, '--port=' + str(port), "--allow-http", "--no-auth", working_dir ]
+        return [full_path, '--port=' + str(port), "--allow-http", "--no-auth", data_dir, extensions_dir, working_dir]
 
     return {
         'command': _codeserver_command,
@@ -28,3 +34,4 @@ def setup_codeserver():
                                       'icons', 'vscode.svg')
         }
     }
+
