@@ -23,7 +23,7 @@ def setup_codeserver():
         if extensions_dir is not "":
             extensions_dir = "--extensions-dir=" + str(extensions_dir)
 
-        return [full_path, '--port=' + str(port), "--allow-http", "--no-auth", data_dir, extensions_dir, working_dir]
+        return [full_path, '--port=' + str(port), "--allow-http", "--no-auth", "--vanilla", data_dir, extensions_dir, working_dir]
 
     return {
         'command': _codeserver_command,
