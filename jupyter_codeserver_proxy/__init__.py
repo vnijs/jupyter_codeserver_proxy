@@ -15,10 +15,10 @@ def setup_codeserver():
         if not full_path:
             raise FileNotFoundError("Can not find code-server in $PATH")
         working_dir = os.getenv("CODE_WORKINGDIR", None)
-        if os.path.isdir("/home/jovyan/git") is False:
-            working_dir = None
         if working_dir is None:
             working_dir = os.getenv("JUPYTER_SERVER_ROOT", ".")
+        elif os.path.isdir(working_dir) is False:
+            os.mkdir(working_dir)
         data_dir = os.getenv("CODE_USER_DATA_DIR", "")
         if data_dir != "":
             data_dir = "--user-data-dir=" + str(data_dir)
