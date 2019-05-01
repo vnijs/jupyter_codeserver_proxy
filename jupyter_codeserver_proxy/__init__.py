@@ -25,6 +25,11 @@ def setup_codeserver():
         extensions_dir = os.getenv("CODE_EXTENSIONS_DIR", "")
         if extensions_dir != "":
             extensions_dir = "--extensions-dir=" + str(extensions_dir)
+        builtin_extensions_dir = os.getenv("CODE_BUILTIN_EXTENSIONS_DIR", "")
+        if builtin_extensions_dir != "":
+            builtin_extensions_dir = "--builtin-extensions-dir=" + str(
+                builtin_extensions_dir
+            )
 
         return [
             full_path,
@@ -33,6 +38,7 @@ def setup_codeserver():
             "--no-auth",
             "--vanilla",
             data_dir,
+            builtin_extensions_dir,
             extensions_dir,
             working_dir,
         ]
