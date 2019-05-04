@@ -38,8 +38,8 @@ def setup_codeserver():
             "--no-auth",
             "--vanilla",
             data_dir,
-            builtin_extensions_dir,
             extensions_dir,
+            builtin_extensions_dir,
             working_dir,
         ]
 

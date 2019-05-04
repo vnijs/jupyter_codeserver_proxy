@@ -13,7 +13,7 @@ developed by Dirk Grunwald (@dirkcgrunwald on GitHub)
 RUN	cd /opt && \
 	mkdir /opt/code-server && \
 	cd /opt/code-server && \
-	wget -qO- https://github.com/codercom/code-server/releases/download/1.939-vsc1.33.1/code-server-1.939-vsc1.33.1-linux-x64.tar.gz | tar zxvf - --strip-components=1
+	wget -qO- https://github.com/cdr/code-server/releases/download/1.939-vsc1.33.1/code-server-1.939-vsc1.33.1-linux-x64.tar.gz | tar zxvf - --strip-components=1
 
 ENV	PATH=/opt/code-server:$PATH
 ```
